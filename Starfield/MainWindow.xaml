@@ -5,8 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Starfield"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="Starfield"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="WidthAndHeight">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Width"
+                    Value="100" />
+            <Setter Property="Height"
+                    Value="30" />
+            <Setter Property="Margin"
+                    Value="2" />
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Center" />
+            <Setter Property="VerticalContentAlignment"
+                    Value="Center" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Width"
+                    Value="50" />
+            <Setter Property="Height"
+                    Value="20" />
+            <Setter Property="Margin"
+                    Value="2" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Center" />
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <Border BorderThickness="1"
+                BorderBrush="Black">
+            <local:CustomCanvas x:Name="MyCanvas"
+                                Background="Black"
+                                Width="500"
+                                Height="500"
+                                Loaded="MyCanvas_Loaded" />
+        </Border>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <Button Name="ResetButton"
+                    Click="ResetButton_Click"
+                    Content="Reset" />
+            <TextBlock Name="SpeedTextBlock">20</TextBlock>
+            <Button Name="IncreseButton"
+                    Click="IncreseButton_Click"
+                    Content="Speed up" />
+            <Button Name="DecreseButton"
+                    Click="DecreseButton_Click"
+                    Content="Speed down" />
+        </StackPanel>
+    </StackPanel>
 </Window>
